@@ -1,0 +1,5 @@
+/.vscode
+/.ipy*
+.idea
+pemidi_test.py
+__pycache__
