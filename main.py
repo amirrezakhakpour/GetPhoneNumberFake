@@ -5,7 +5,7 @@ from random import choices
 import string
 
 
-def create_phone_fake(country_code_input="IR", area_input="khozestan"):
+def phone_number_generator(country_code_input="IR", area_input="khozestan"):
     response = requests.get(url)
     if response.status_code == 200:
         list_json = json.loads(response.text)
@@ -33,5 +33,5 @@ def check_validation(list_result, country_code_input, area_input):
 
 
 if __name__ == '__main__':
-    print(create_phone_fake(area_input='texas', country_code_input="USA"))
-    print(create_phone_fake(area_input='texas', country_code_input="BBBB"))
+    print(phone_number_generator(area_input='texas', country_code_input="USA"))
+    print(phone_number_generator(area_input='texas', country_code_input="BBBB"))
