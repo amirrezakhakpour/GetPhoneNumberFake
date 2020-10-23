@@ -6,6 +6,7 @@ import string
 
 
 def create_phone_number(country_code="IR", local_code="khozestan"):
+
     """[summary]
     an function that get a country and local code, an finally
     generate a random Phone number
@@ -28,14 +29,15 @@ def create_phone_number(country_code="IR", local_code="khozestan"):
             country_code = list_country['country_code']  # ***
             area_code = list_country['area_code'][local_code]
             generated_number = ''.join(choices(string.digits, k=7))
+
             return country_code + area_code + generated_number
+
 
         except KeyError:
             print('invalid input! try again')
             
 
         
-
 if __name__ == '__main__':
 
     generated_number = create_phone_number(local_code='texas', country_code="USA") 
