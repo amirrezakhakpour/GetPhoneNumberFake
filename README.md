@@ -1,6 +1,6 @@
 # Fake Phone Number Generator
 
-a fake phone number generator, works via a api
+a fake phone number generator, works via an API
 
 
 ## Usage
