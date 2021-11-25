@@ -1,6 +1,5 @@
 from rules import url
 import requests
-import json
 from random import choices
 import string
 
@@ -21,7 +20,12 @@ def create_phone_number(country_code="IR", local_code="khozestan"):
     response = requests.get(url)
 
     if response.status_code == 200:
-        parsed_data = json.loads(response.text)
+        try:
+            parsed_data = response.json()
+        except requests.exceptions.JSONDecodeError:
+            print('invalid response')
+            return
+
         data = parsed_data['result']
         
         try:
